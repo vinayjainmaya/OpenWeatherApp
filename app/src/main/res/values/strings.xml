@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">OpenWeatherApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_bookmark">Bookmark</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Detail</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="auto_hint">Enter City/Location</string>
+    <string name="add_your_favourite_city">You have no favourite city,\nSearch one &amp; add</string>
+    <string name="city_not_found">city not found</string>
+    <string name="generic_error_msg">Something went wrong..!</string>
+    <string name="no_internet">You are offline..!</string>
+    <string name="added_bookmark_msg">Location added Bookmark</string>
+    <string name="removed_bookmark_msg">Location removed from BookMark</string>
+</resources>
