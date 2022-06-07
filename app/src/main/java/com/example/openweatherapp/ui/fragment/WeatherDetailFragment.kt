@@ -1,7 +1,6 @@
 package com.example.openweatherapp.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -41,7 +40,9 @@ class WeatherDetailFragment : Fragment() {
         return root
     }
 
-
+    /**
+     * method to set up the UI
+     */
     private fun setUpUI() {
         toolBar = requireActivity().findViewById(R.id.toolbar)
         toolBar.title = weatherViewModel.cityWeather.name
@@ -68,6 +69,9 @@ class WeatherDetailFragment : Fragment() {
         weatherViewModel.isLocationBookmarked(weatherViewModel.cityWeather.id)
     }
 
+    /**
+     * method to set livedata observer
+     */
     private fun setObserver() {
         weatherViewModel.addRemoveBookmarkResult.observe(viewLifecycleOwner) { event ->
             event.getContentIfNotHandled()?.let { result ->
@@ -108,6 +112,9 @@ class WeatherDetailFragment : Fragment() {
         }
     }
 
+    /**
+     * method to update the bookmark icon in toolbar
+     */
     private fun updateIcon(state: BookMarkState) {
         if (::toolBar.isInitialized) {
             toolBar.also {

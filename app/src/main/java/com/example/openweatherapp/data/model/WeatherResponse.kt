@@ -2,6 +2,9 @@ package com.example.openweatherapp.data.model
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * Data class to hold the weather response
+ */
 data class WeatherResponse(
     @SerializedName("coord") val coord: Coord,
     @SerializedName("weather") val weather: List<Weather>,

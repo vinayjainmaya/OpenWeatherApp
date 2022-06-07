@@ -6,6 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.openweatherapp.R
 import com.example.openweatherapp.databinding.BookmarkedLocationItemLayoutBinding
 
+/**
+ * Adapter class to show bookmarked location
+ *
+ * @param listener on item click listener
+ *
+ */
 class BookmarkedLocationAdapter(private val listener: OnItemClickListener)
 : RecyclerView.Adapter<BookmarkedLocationAdapter.BookmarkViewHolder>() {
 

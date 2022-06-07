@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="@dimen/padding_medium"
     tools:context=".ui.fragment.WeatherDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,28 +19,29 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textColor="@color/purple_500"
-            android:textSize="64sp"
+            android:textSize="@dimen/temp_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="12°" />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/weather_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_size_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/temperature"
             tools:text="light rain" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
             android:id="@+id/layout_details"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
             android:background="@color/light_gray"
-            android:padding="8dp"
-            android:layout_marginTop="8dp"
+            android:padding="@dimen/padding_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/weather_main">
 
@@ -51,7 +52,7 @@
                 android:gravity="center_horizontal"
                 android:letterSpacing="0.02"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_size_medium"
                 tools:text="Humidity: 83%" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -61,7 +62,7 @@
                 android:gravity="center_horizontal"
                 android:letterSpacing="0.02"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_size_medium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/humidity"
                 tools:text="Wind: 3.1m/s" />
@@ -73,7 +74,7 @@
                 android:gravity="center_horizontal"
                 android:letterSpacing="0.02"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_size_medium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/wind"
                 tools:text="Pressure: 1003hPa" />
@@ -81,6 +82,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ProgressBar
         android:id="@+id/progress_circular"
         android:layout_width="wrap_content"

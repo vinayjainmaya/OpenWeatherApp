@@ -5,6 +5,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.openweatherapp.data.local.Location.Companion.TABLE_NAME
 
+/**
+ * Entity class to defines the table details
+ */
 @Entity(tableName = TABLE_NAME)
 data class Location(
     @PrimaryKey val id: Int,

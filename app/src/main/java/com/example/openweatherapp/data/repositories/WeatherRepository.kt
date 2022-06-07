@@ -6,6 +6,9 @@ import com.example.openweatherapp.data.model.WeatherResponse
 import com.example.openweatherapp.data.service.WeatherInterface
 import javax.inject.Inject
 
+/**
+ * class to access data from different data source.
+ */
 class WeatherRepository @Inject constructor(
     private val service: WeatherInterface, private val db: WeatherDatabase) {
 

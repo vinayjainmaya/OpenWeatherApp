@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.openweatherapp.R
 import com.example.openweatherapp.databinding.FragmentHomeBinding
 import com.example.openweatherapp.ui.adapter.BookmarkedLocationAdapter
@@ -47,6 +47,9 @@ class HomeFragment : Fragment(), BookmarkedLocationAdapter.OnItemClickListener {
         binding.searchEditText.text.clear()
     }
 
+    /**
+     * method to set up the UI
+     */
     private fun setUpUI() {
         binding.searchEditText.setOnEditorActionListener { v, _, _ ->
             v.hideKeyboard()
@@ -56,6 +59,9 @@ class HomeFragment : Fragment(), BookmarkedLocationAdapter.OnItemClickListener {
         bookmarkAdapter = BookmarkedLocationAdapter(this)
     }
 
+    /**
+     * method to set livedata observer
+     */
     private fun setObserver() {
         weatherViewModel.cityWeatherResult.observe(viewLifecycleOwner) { event ->
             event.getContentIfNotHandled()?.let { result ->
@@ -90,8 +96,10 @@ class HomeFragment : Fragment(), BookmarkedLocationAdapter.OnItemClickListener {
         when (result) {
             ResponseState.LOADING -> binding.progressCircular.show()
             ResponseState.SUCCESS -> {
-                Navigation.findNavController(binding.root)
-                    .navigate(R.id.action_nav_home_to_nav_detail)
+                if (safeNavigate()) {
+                    findNavController()
+                        .navigate(R.id.action_nav_home_to_nav_detail)
+                }
             }
             ResponseState.NOT_FOUND -> {
                 binding.root.snackbar(getString(R.string.city_not_found))
@@ -103,6 +111,10 @@ class HomeFragment : Fragment(), BookmarkedLocationAdapter.OnItemClickListener {
                 binding.root.snackbar(getString(R.string.no_internet))
             }
         }
+    }
+
+    private fun safeNavigate(): Boolean {
+        return findNavController().currentDestination == findNavController().findDestination(R.id.nav_home)
     }
 
     override fun onDestroyView() {

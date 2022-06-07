@@ -17,6 +17,7 @@ import retrofit2.HttpException
 import java.net.UnknownHostException
 import javax.inject.Inject
 
+
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
     private val repository: WeatherRepository

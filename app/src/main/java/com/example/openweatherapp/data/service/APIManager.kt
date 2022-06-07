@@ -7,7 +7,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-
+/**
+ * Manager class to generate retrofit services
+ */
 class APIManager {
 
     val retrofit: Retrofit

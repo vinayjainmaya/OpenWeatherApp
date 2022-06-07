@@ -6,6 +6,9 @@ import com.example.openweatherapp.data.model.WeatherResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+/**
+ * interface to have rest api call
+ */
 interface WeatherInterface {
 
     @GET("weather")

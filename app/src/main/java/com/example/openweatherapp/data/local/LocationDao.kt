@@ -3,6 +3,10 @@ package com.example.openweatherapp.data.local
 import androidx.room.*
 import com.example.openweatherapp.data.local.Location.Companion.TABLE_NAME
 
+/**
+ * Data access object (DAO) interface which provides methods
+ * to interact with table
+ */
 @Dao
 interface LocationDao {
 
