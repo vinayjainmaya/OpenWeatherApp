@@ -2,7 +2,7 @@ package com.example.openweatherapp.utils
 
 import com.example.openweatherapp.data.model.WeatherResponse
 
-const val API_KEY = "53bfe4ae22a8449180fce033dee88184"
+const val API_KEY = "<OPEN_WEATHER_API_KEY>"
 const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
 const val IMG_BASE_URL = "https://openweathermap.org/img/wn/"
 
